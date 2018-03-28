@@ -21,6 +21,9 @@
     "src"
   ],
   "scripts": {
+    "release": "npm run package && npm run compress",
+    "package": "webpack --config ./webpack.config.iclient.js",
+    "compress": "uglifyjs  --comments /deck.gl.js/i -c -m -o ./dist/deck.gl.min.js -- ./dist/deck.gl.js",
     "start": "(cd examples/layer-browser && (path-exists node_modules || npm i) && npm run start-local)",
     "build-clean": "rm -fr dist dist-es6 && mkdir -p dist dist-es6",
     "build-es6": "rm -fr dist-es6 && babel src --out-dir dist-es6 --source-maps inline",
@@ -57,6 +60,8 @@
   "devDependencies": {
     "babel-cli": "^6.22.2",
     "babel-core": "^6.22.1",
+    "babel-loader": "^7.1.4",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-plugin-istanbul": "^4.1.1",
     "babel-plugin-transform-builtin-extend": "^1.1.2",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.22.0",
@@ -89,6 +94,7 @@
     "tape": "4.8",
     "tape-catch": "^1.0.4",
     "transform-loader": "^0.2.3",
+    "uglify-js": "^3.3.16",
     "webpack": "^2.4.0",
     "webpack-dev-server": "^2.4.0"
   },
