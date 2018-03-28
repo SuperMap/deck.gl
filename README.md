@@ -27,6 +27,11 @@ such as scatterplots, arcs, geometries defined in GeoJSON, etc...
 
     npm install --save deck.gl
 
+
+##Package independent deck.gl.js for iClient
+
+Go to branch [deck.gl-for-iclient](https://github.com/SuperMap/deck.gl/tree/deck.gl-for-iclient)
+
 ## Using deck.gl
 
 To learn how to use deck.gl through examples coming with the deck.gl repo,
